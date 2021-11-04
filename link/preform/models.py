@@ -1,6 +1,7 @@
 from django.db import models
 from core.models import Detail
 from client.models import Branch
+import datetime
 
 # Import Singnals
 from django.db.models.signals import post_save
@@ -33,16 +34,20 @@ class Preform(models.Model):
         verbose_name_plural = 'Preforms'
 
     def generateIdentifier(self):
-        identifier = 'LPREF/'+ str(self.client.company.name) + str(self.id) + str(self.date)
+        identifier = 'PREFL'
+        identifier += str(self.client.company.name[:1]) + str(self.id)
         return identifier
 
     def generateTotalCost(self):
+        cost = 0.00
         details = DetailPreform.objects.filter(preform = self.id)
         if details == None:
-            self.total_cost = 0
+            cost = 0.00
         else:
             for item in details:
-                self.total_cost += item.cost
+                cost += item.cost
+        self.total_cost = cost
+        return cost
 
 
     def __str__(self):

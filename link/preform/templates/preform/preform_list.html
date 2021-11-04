@@ -1,0 +1,8 @@
+<h1>Preforms</h1>
+<ul>
+    {% for preform in object_list %}
+    <li>{{ preform.date|date }} - {{ preform.generateTotalCost }}</li>
+    {% empty %}
+    <li>No preforms yet.</li>
+    {% endfor %}
+</ul>
