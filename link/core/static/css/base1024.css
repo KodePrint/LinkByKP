@@ -1,0 +1,137 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    font-family: 'Dosis', sans-serif;
+}
+
+body {
+    font-size: 1.6rem;
+    min-height: 100vh;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+
+/* MENU SECTION */
+
+.navbar {
+    padding: 1rem 3rem;
+}
+
+.navbar .info {
+    display: inherit;
+}
+
+
+/* hamburger-menu */
+
+.hamburger-menu {
+    display: none;
+}
+
+
+/* Menu Escritorio */
+
+.list-menu {
+    top: 5rem;
+    padding: .1rem 0;
+    max-width: 25rem;
+    height: 100%;
+    margin: 0;
+    background: #000;
+}
+
+.list-menu .list {
+    position: relative;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+.list-menu .list .item a {
+    justify-content: flex-start;
+    padding: 1.5rem 0;
+    padding-left: 3rem;
+    border-bottom: .2rem solid rgba(255, 255, 255, .2);
+    border-bottom-left-radius: .5rem;
+    border-bottom-right-radius: .5rem;
+}
+
+.list-menu .list .item a i {
+    font-size: 3rem;
+}
+
+.list-menu .list .item a span {
+    padding-left: 1rem;
+    font-size: 1.6rem;
+    transition: .3s ease;
+}
+
+.list-menu .btn-menu {
+    display: flex;
+    justify-content: center;
+}
+
+.list-menu .btn-menu .collapse-button {
+    width: 5rem;
+    height: 5rem;
+    font-size: 3rem;
+    border-radius: 100%;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .3s ease;
+}
+
+.list-menu .btn-menu .collapse-button:hover {
+    background: rgba(255, 255, 255, .5);
+}
+
+
+/* Fondo Movil */
+
+.list-menu .fondo {
+    display: none;
+}
+
+
+/* styles collapse-menu */
+
+.collapse-menu .list-menu .btn-menu .collapse-button {
+    transform: rotate(180deg);
+}
+
+
+/* .collapse-menu .list-menu .list .item a {
+    justify-content: center;
+} */
+
+.collapse-menu .list-menu .list .item a span {
+    margin-left: -50rem;
+}
+
+.collapse-menu .list-menu {
+    max-width: 9rem;
+}
+
+.content.collapse-menu {
+    width: calc(100% - 9rem);
+    margin-left: 9rem;
+}
+
+
+/* CONTENT SECTION */
+
+.content {
+    width: calc(100% - 25rem);
+    margin-left: 25rem;
+    padding: 2rem 4rem;
+    transition: 1s ease;
+    /* background: wheat; */
+}
