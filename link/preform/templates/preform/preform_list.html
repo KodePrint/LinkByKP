@@ -1,8 +1,45 @@
-<h1>Preforms</h1>
-<ul>
-    {% for preform in object_list %}
-    <li>{{ preform.date|date }} - {{ preform.generateTotalCost }}</li>
-    {% empty %}
-    <li>No preforms yet.</li>
-    {% endfor %}
-</ul>
+{% extends 'core/base.html' %}
+
+<!-- Content -->
+{% block content %}
+<div class="page-title">
+    <h2>Preforms</h2>
+    <div class="page-subtitle">
+        <h3>Listado de preformas..!</h3>
+    </div>
+</div>
+<div class="table">
+    <table id="preforms">
+        <thead>
+            <tr>
+                <th>Identificador</th>
+                <th>Fecha</th>
+                <th>Sucursal</th>
+                <th>Monto</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for preform in object_list %}
+            <tr>
+                <td>{{preform.generateIdentifier}}</td>
+                <td>{{preform.date}}</td>
+                <td>{{preform.client}}</td>
+                <td>Q. {{preform.generateTotalCost}}</td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td rowspan="3">No preforms yet.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock content %} {% block scritps %}
+<script>
+    $(document).ready(function() {
+        $('#preforms').DataTable({
+            responsive: true
+        });
+    });
+</script>
+{% endblock scritps %}

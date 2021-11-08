@@ -1,13 +1,7 @@
-
-
-
-
-.btn-hamburguer {
-    display: none;
-}
-
 /* MENU */
-.menu.open-menu, .menu {
+
+.menu.open-menu,
+.menu {
     margin-top: 0;
     display: flex;
     align-items: center;
@@ -16,6 +10,8 @@
     max-width: 28rem;
     height: calc(100vh - 12rem);
     transition: all .5s ease;
+    font-weight: 800;
+    text-transform: uppercase;
 }
 
 .menu .list {
@@ -29,21 +25,26 @@
     align-items: center;
     height: auto;
     padding: 1.5rem;
+    padding-left: 2rem;
     border-bottom: none;
     cursor: pointer;
     text-decoration: none;
     transition: all .5s ease;
+    border-bottom: .1rem solid rgba(255, 255, 255, .5);
 }
 
-.menu .list .item a span{
+.menu .list .item a:hover {
+    background: rgba(255, 255, 255, .5);
+}
+
+.menu .list .item a span {
     margin-left: 1rem;
     transition: all .5s ease;
 }
-.menu .list .item a i{
+
+.menu .list .item a i {
     font-size: 2.5rem;
 }
-
-
 
 .menu .btn-menu {
     display: flex;
@@ -51,6 +52,7 @@
     width: 100%;
     padding: 1.5rem;
 }
+
 .menu .collapse-button {
     padding: .5rem;
     width: 5rem;
@@ -58,9 +60,17 @@
     font-size: 2.5rem;
     border-radius: 100%;
     border: none;
+    transition: .3s all ease;
+    box-shadow: 0 .1rem .2rem .2rem rgba(255, 255, 255, .5);
 }
 
+.menu .collapse-button:hover {
+    background: rgba(255, 255, 255, .5);
+}
+
+
 /* CONTENT */
+
 .content {
     padding: 2rem;
     margin-top: 5rem;
@@ -72,35 +82,42 @@
 
 
 /* Collapse Button Click */
-.menu.open-menu, .menu.collapse-menu {
+
+.menu.open-menu,
+.menu.collapse-menu {
     width: 8rem;
     transition-delay: .3s;
     transition: all .5s ease;
-
 }
+
 .menu.collapse-menu .list .item {
     justify-content: center;
     align-items: center;
     transition: all .5s ease;
-
 }
+
 .menu.collapse-menu .list .item a {
     justify-content: center;
     transition: all .5s ease;
-
+    padding: 1.5rem;
 }
-.menu.collapse-menu .list .item a span{
+
+.menu.collapse-menu .list .item a span {
     position: absolute;
     margin-left: -10rem;
     opacity: 0;
     transition: all .3s ease;
-
 }
 
-.menu.collapse-menu + .content {
+.menu.collapse-menu+.content {
     margin-left: 8rem;
     width: calc(100% - 8rem);
 }
+
+.collapse-menu .collapse-button {
+    transform: rotate(180deg);
+}
+
 
 /* FOOTER */
 

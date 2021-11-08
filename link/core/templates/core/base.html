@@ -7,12 +7,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}{% endblock title %}</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;500;800&display=swap" rel="stylesheet">
+
     <!-- Styles CSS -->
     <link rel="stylesheet" href='{% static "css/base.css" %}'>
     <link rel="stylesheet" href='{% static "css/base1024.css" %}' media="(min-width: 1024px)">
 
     <!-- Font Awesome -->
     <link href="https://kit-pro.fontawesome.com/releases/v5.15.3/css/pro.min.css" rel="stylesheet">
+
+    <!-- DataTables -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">
 </head>
 
 <body>
@@ -30,26 +39,16 @@
         </div>
 
         <!-- Menu -->
-        {% include "core/menu.html" %} {% block menu %}
+        {% include "core/menu.html" %}
 
         <!-- Content -->
+
         <div class="content">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima aliquam nisi possimus sed ratione, iste quos fugiat numquam commodi magnam ex, praesentium eaque sit, quibusdam iure adipisci temporibus rem repudiandae.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima aliquam nisi possimus sed ratione, iste quos fugiat numquam commodi magnam ex, praesentium eaque sit, quibusdam iure adipisci temporibus rem repudiandae.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima aliquam nisi possimus sed ratione, iste quos fugiat numquam commodi magnam ex, praesentium eaque sit, quibusdam iure adipisci temporibus rem repudiandae.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima aliquam nisi possimus sed ratione, iste quos fugiat numquam commodi magnam ex, praesentium eaque sit, quibusdam iure adipisci temporibus rem repudiandae.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima aliquam nisi possimus sed ratione, iste quos fugiat numquam commodi magnam ex, praesentium eaque sit, quibusdam iure adipisci temporibus rem repudiandae.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima aliquam nisi possimus sed ratione, iste quos fugiat numquam commodi magnam ex, praesentium eaque sit, quibusdam iure adipisci temporibus rem repudiandae.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima aliquam nisi possimus sed ratione, iste quos fugiat numquam commodi magnam ex, praesentium eaque sit, quibusdam iure adipisci temporibus rem repudiandae.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima aliquam nisi possimus sed ratione, iste quos fugiat numquam commodi magnam ex, praesentium eaque sit, quibusdam iure adipisci temporibus rem repudiandae.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima aliquam nisi possimus sed ratione, iste quos fugiat numquam commodi magnam ex, praesentium eaque sit, quibusdam iure adipisci temporibus rem repudiandae.</p>
+            {% block content %} {% endblock content %}
         </div>
 
     </div>
-    <!-- Menu -->
-    {% endblock menu %}
-    <!-- Content -->
-    {% block content %}{% endblock content %}
+
     <!-- Footer -->
     <div class="container-footer">
         <footer>
@@ -64,9 +63,15 @@
             </div>
         </footer>
     </div>
+    <!-- JQuery -->
+    <script src="{% static 'js/jquery-3.6.0.min.js' %}"></script>
+    <!-- DataTable -->
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script>
 
     <!-- Scripts -->
     <script src='{% static "js/link.js" %}'></script>
+
+    {% block scritps %} {% endblock scritps %}
 </body>
 
 </html>
