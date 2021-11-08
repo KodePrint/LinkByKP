@@ -62,7 +62,10 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="info">
-            <span>By <img src="{% static 'assets/img/kp_black.ico' %}" alt=""> KodePrint 2021 &copy;</span>
+            <span>By <picture class="picture">
+                <source media="(max-width: 1024px)" srcset="{% static 'assets/img/kp_black.ico' %}">
+                <img src="{% static 'assets/img/kp_white.ico' %}" alt="KP">
+            </picture> KodePrint 2021 &copy;</span>
         </div>
     </footer>
 

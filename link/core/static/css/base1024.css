@@ -148,7 +148,7 @@
     
     .content .bg {
         width: calc(100% - 25rem);
-        height: calc(100vh - 12rem);
+        height: calc(100vh - 12.2rem);
         position: absolute;
         z-index: 0;
         background: var(--color_text);
@@ -159,7 +159,7 @@
         background: white;
         padding: 2rem;
         min-width: calc(100% - 25rem);
-        min-height: calc(100vh - 12rem);
+        min-height: calc(100vh - 12.2rem);
         border-bottom-left-radius: 3rem;
     }
     /* FOOTER SECTION */

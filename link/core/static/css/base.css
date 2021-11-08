@@ -86,7 +86,7 @@ body {
 }
 
 .bar {
-    background: #000;
+    background: var(--color_text);
     width: 100%;
     padding: .3rem;
     border-radius: .3rem;
@@ -105,6 +105,11 @@ body {
 
 .open-menu .bar3 {
     transform: translateY(-1.3rem) rotateZ(-45deg);
+}
+
+.open-menu .bar {
+    background: var(--color_base);
+    box-shadow: 0 0 .5rem .2rem var(--color_text_important);
 }
 
 
@@ -215,7 +220,13 @@ footer {
     color: var(--text_gray);
 }
 
+.footer .info .picture {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .footer .info img {
-    width: 1.6rem;
+    width: 2rem;
     margin: 0 .2rem;
 }
