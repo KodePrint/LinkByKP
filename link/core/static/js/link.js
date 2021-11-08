@@ -1,11 +1,11 @@
-var hamburguer = document.querySelector('.btn-hamburguer')
+var hamburguer = document.querySelector('.hamburger-menu')
 var menu = document.querySelector('.menu')
 var collapseBtn = document.querySelector('.collapse-button')
 var barState = localStorage.getItem('bar')
 
 hamburguer.addEventListener('click', () => {
     hamburguer.classList.toggle('open-menu')
-    menu.classList.toggle('open-menu')
+    document.querySelector('.menu').classList.toggle('open-menu')
 })
 
 if (barState == 'collapse') {
