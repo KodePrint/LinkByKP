@@ -14,3 +14,8 @@ class PreformCreateView(CreateView):
 
 class PreformListView(ListView):
     model = Preform
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['link'] = 'preform'
+        return context

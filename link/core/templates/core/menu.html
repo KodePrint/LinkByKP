@@ -2,20 +2,16 @@
     <div class="fondo"></div>
     <ul class="list">
         <li class="item">
-            <a class="item-link" href="{% url 'home' %}"><i class="fas fa-home-lg-alt"></i><span>Home</span></a>
+            <a class="item-link home" href="{% url 'home' %}"><i class="fas fa-home-lg-alt"></i><span>Home</span></a>
         </li>
         <li class="item">
-            <a class="item-link 
-            {% if path %}
-                
-            {% endif %}
-                " href="{% url 'preformList' %}"><i class="fas fa-file-invoice"></i><span>Preformas</span></a>
+            <a class="item-link preform" href="{% url 'preformList' %}"><i class="fas fa-file-invoice"></i><span>Preformas</span></a>
         </li>
         <li class="item">
-            <a class="item-link" href=""><i class="fas fa-file-invoice-dollar"></i><span>Facturas</span></a>
+            <a class="item-link invoice" href=""><i class="fas fa-file-invoice-dollar"></i><span>Facturas</span></a>
         </li>
         <li class="item">
-            <a class="item-link" href=""><i class="fas fa-store-alt"></i><span>Clientes</span></a>
+            <a class="item-link client" href="{% url 'clientList' %}"><i class="fas fa-store-alt"></i><span>Clientes</span></a>
         </li>
     </ul>
     <div class="btn-menu">

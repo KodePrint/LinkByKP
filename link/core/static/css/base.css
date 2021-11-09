@@ -196,13 +196,17 @@ body {
 
 .content {
     margin-top: 8rem;
+    padding-bottom: 8rem;
+}
+
+.content .section {
+    padding: 0 1.5rem;
 }
 
 .content .table {
     overflow-x: scroll;
     padding: 1rem;
 }
-
 
 
 /* FOOTER SECTION */

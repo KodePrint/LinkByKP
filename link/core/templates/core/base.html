@@ -78,8 +78,31 @@
     <script src='{% static "js/link.js" %}'></script>
 
     {% block scritps %} {% endblock scritps %}
-    <!-- Link Selecterd -->
+    <!-- selected-link -->
     <script>
+        let home = document.querySelector('.home');
+        let preform = document.querySelector('.preform');
+        let invoice = document.querySelector('.invoice');
+        let client = document.querySelector('.client');
+        let path = '{{link}}';
+
+        console.log(path)
+
+        function selected_link(link) {
+            home.classList.remove('selected');
+            preform.classList.remove('selected');
+            invoice.classList.remove('selected');
+            client.classList.remove('selected');
+
+            link.classList.add('selected');
+        }
+        if (path == '') {
+            selected_link(home);
+        } else if (path == 'preform') {
+            selected_link(preform);
+        } else if (path == 'client') {
+            selected_link(client);
+        }
     </script>
 </body>
 
