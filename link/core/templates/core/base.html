@@ -21,7 +21,8 @@
     <link href="https://kit-pro.fontawesome.com/releases/v5.15.3/css/pro.min.css" rel="stylesheet">
 
     <!-- DataTables -->
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">
+    <link rel="stylesheet" href='{% static "css/dataTables/jquery.dataTables.min.css" %}'>
+    <link rel="stylesheet" href='{% static "css/dataTables/responsive.dataTables.min.css" %}'>
 </head>
 
 <body>
@@ -72,7 +73,9 @@
     <!-- JQuery -->
     <script src="{% static 'js/jquery-3.6.0.min.js' %}"></script>
     <!-- DataTable -->
-    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script>
+    <script src="{% static 'js/jquery.dataTables.min.js' %}"></script>
+    <script src="{% static 'js/dataTables.responsive.min.js' %}"></script>
+
 
     <!-- Scripts -->
     <script src='{% static "js/link.js" %}'></script>

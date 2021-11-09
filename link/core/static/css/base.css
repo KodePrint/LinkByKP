@@ -202,12 +202,36 @@ body {
 
 .content {
     background: white;
-    min-height: calc(100vh - 11rem);
     padding: 1.5rem;
+    padding-bottom: 0;
+    min-height: calc(100vh - 9.4rem);
 }
 
-.content .table {
-    overflow-x: scroll;
+
+/* CONTENT LIST TEMPLATE */
+
+.page-title {
+    margin-bottom: 2rem;
+    color: var(--text_gray);
+}
+
+.page-title h2 {
+    font-size: 3.2rem;
+    margin-bottom: .5rem;
+    text-transform: uppercase;
+}
+
+.content-page {}
+
+.table-list {
+    max-width: 98vw;
+}
+
+
+/* DataTable Styles */
+
+.table-icon {
+    font-size: 2rem;
 }
 
 

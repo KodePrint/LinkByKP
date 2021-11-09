@@ -1,47 +1,44 @@
-{% extends "core/base.html" %}
+<!-- Extendemos el template list_base -->
+{% extends "core/list_base.html" %}
 
-<!-- Content -->
-{% block content %}
-<div class="page-title">
-    <h2>Clientes</h2>
-    <div class="page-subtitle">
-        <h3>Listado de Clientes..!</h3>
-    </div>
-</div>
-<div class="content-page">
-    <div class="table">
-        <table id="clients-table">
-            <thead>
-                <tr>
-                    <th><i class="fas fa-key"></i>Identificador</th>
-                    <th><i class="fas fa-calendar-day"></i> Compania</th>
-                    <th><i class="fas fa-store-alt"></i>Sucursal</th>
-                    <th><i class="fas fa-sack-dollar"></i>Direccion</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for client in object_list %}
-                <tr>
-                    <td>{{client.id}}</td>
-                    <td>{{client.company}}</td>
-                    <td>{{client.name}}</td>
-                    <td>{{client.address}}</td>
-                </tr>
-                {% empty %}
-                <tr>
-                    <td rowspan="3">No clients yet.</td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-    </div>
-    {% endblock content %}
-    <!-- Scripts -->
-    {% block scritps %}
-</div>
-<script>
-    $(document).ready(function() {
-        $('#clients-table').DataTable();
-    });
-</script>
-{% endblock scritps %}
+<!-- Modificamos el contenido -->
+<!-- Titulo -->
+{% block page_title %}Clientes {% endblock page_title %}
+<!-- Subtitulo -->
+{% block page_subtitle %}Listado de Clientes Registrados {% endblock page_subtitle %}
+<!-- Tabla de la lista -->
+{% block table %}
+<table id="clients-table" class="table display responsive nowrap">
+    <thead>
+        <tr>
+            <th><i class="fas fa-store-alt"></i>Sucursal</th>
+            <th><i class="fas fa-calendar-day"></i>Compania</th>
+            <th><i class="fas fa-calendar-day"></i>Telefono</th>
+            <th><i class="fas fa-calendar-day"></i>Email</th>
+            <th><i class="fas fa-sack-dollar"></i>Direccion</th>
+            <th><i class="fas fa-sack-dollar"></i>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for client in object_list %}
+        <tr>
+            <td>{{client.id}}-{{client.name}}</td>
+            <td>{{client.company}}</td>
+            <td>{{client.company.email}}</td>
+            <td>{{client.company.phone}}</td>
+            <td>{{client.address}}</td>
+            <td>
+                <div class="actions">
+                    <button><i class="fas fa-edit"></i></button>
+                    <button><i class="fas fa-trash"></i></button>
+                </div>
+            </td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td rowspan="3">No clients yet.</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock table %}

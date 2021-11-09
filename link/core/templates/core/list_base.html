@@ -1,0 +1,60 @@
+{% extends "core/base.html" %}
+
+<!-- Incluimos el contenido -->
+{% block content %}
+<div class="page-title">
+    <h2>{% block page_title %} {% endblock page_title %}</h2>
+    <div class="page-subtitle">
+        <span>{% block page_subtitle %} {% endblock page_subtitle %}</span>
+    </div>
+</div>
+<div class="content-page">
+    <div class="table-list">
+        {% block table %} {% endblock table %}
+    </div>
+</div>
+{% endblock content %}
+
+<!-- Scripts -->
+{% block scritps %}
+<script>
+    $(document).ready(function() {
+        adminDataTable()
+    });
+
+    function adminDataTable() {
+        $('.table').DataTable({
+            responsive: true,
+            "language": {
+                "emptyTable": "<i>No hay datos disponibles</i>",
+                "info": "Del _START_ al _END_ de _TOTAL_",
+                "infoEmpty": "Mostrando 0 registros de un total de 0",
+                "infoFiltered": "(<i><small>filtrados de un total de _MAX_ registros</small></i>)",
+                "infoPostFix": "(actualizados)",
+                "lengthMenu": "Mostrar _MENU_ registros",
+                "loadingRecords": "Cargando...",
+                "processing": "Procesando...",
+                "search": "<b><i class='table-icon fas fa-search'></i> Buscar</b>",
+                "searchPlaceholder": "",
+                "zeroRecords": "<i class='table-icon fad fa-sad-tear'></i> No se han econtrado conicidencias.",
+                "paginate": {
+                    "first": "Primera",
+                    "last": "Última",
+                    "next": "<i class='table-icon fad fa-chevron-right'></i>",
+                    "previous": "<i class='table-icon fad fa-chevron-left'></i>",
+                },
+                "aria": {
+                    "sortAscending": "Ordenación ascendente",
+                    "sortDescending": "Ordenación decendente",
+                },
+
+            },
+            "lengthMenu": [
+                [3, 5, 10, 20, 50, 100, -1],
+                [3, 5, 10, 20, 50, 100, "Todos"]
+            ],
+            "iDisplayLength": 8,
+        })
+    }
+</script>
+{% endblock scritps %}
