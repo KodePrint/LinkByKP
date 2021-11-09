@@ -4,6 +4,7 @@ var content = document.querySelector('.content')
 var collapseBtn = document.querySelector('.collapse-button')
 var barState = localStorage.getItem('bar')
 
+
 hamburguer.addEventListener('click', () => {
     hamburguer.classList.toggle('open-menu')
     document.querySelector('.menu').classList.toggle('open-menu')

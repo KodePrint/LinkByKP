@@ -47,7 +47,7 @@
     .list-menu {
         top: 5rem;
         padding: .1rem 0;
-        max-width: 25rem;
+        max-width: 20rem;
         height: calc(100% - 6rem);
         margin: 0;
         background: var(--color_text);
@@ -71,7 +71,10 @@
     }
     
     .list-menu .list .item a i {
+        display: flex;
         font-size: 3rem;
+        width: 4rem;
+        justify-content: center;
     }
     
     .list-menu .list .item a span {
@@ -129,6 +132,7 @@
         margin-left: -50rem;
     }
     
+    
     .collapse-menu .list-menu {
         max-width: 9rem;
     }
@@ -140,14 +144,14 @@
     /* CONTENT SECTION */
     
     .content {
-        width: calc(100% - 25rem);
-        margin-left: 25rem;
+        width: calc(100% - 20rem);
+        margin-left: 20rem;
         transition: 1s ease;
         /* background: wheat; */
     }
     
     .content .bg {
-        width: calc(100% - 25rem);
+        width: calc(100% - 20rem);
         height: calc(100vh - 12.2rem);
         position: absolute;
         z-index: 0;
@@ -158,9 +162,14 @@
         position: absolute;
         background: white;
         padding: 2rem;
-        min-width: calc(100% - 25rem);
+        padding-bottom: 7rem;
+        min-width: calc(100% - 20rem);
         min-height: calc(100vh - 12.2rem);
         border-bottom-left-radius: 3rem;
+    }
+
+    .content .table {
+        overflow-x: auto;
     }
     /* FOOTER SECTION */
     

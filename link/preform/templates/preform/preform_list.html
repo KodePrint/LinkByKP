@@ -8,14 +8,15 @@
         <h3>Listado de preformas..!</h3>
     </div>
 </div>
+<div class="content-page">
 <div class="table">
-    <table id="preforms">
+    <table id="preforms-table">
         <thead>
             <tr>
-                <th>Identificador</th>
-                <th>Fecha</th>
-                <th>Sucursal</th>
-                <th>Monto</th>
+                <th><i class="fas fa-key"></i>Identificador</th>
+                <th><i class="fas fa-calendar-day"></i> Fecha</th>
+                <th><i class="fas fa-store-alt"></i>Sucursal</th>
+                <th><i class="fas fa-sack-dollar"></i>Monto</th>
             </tr>
         </thead>
         <tbody>
@@ -34,7 +35,13 @@
         </tbody>
     </table>
 </div>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit dolores repellendus consequuntur laboriosam vitae. Culpa libero voluptate quaerat commodi veniam voluptatibus ab placeat recusandae voluptas praesentium accusantium provident aut, consequuntur soluta perferendis corporis facere illum. Doloribus perspiciatis labore ipsa laudantium debitis repellendus exercitationem illum perferendis. Quia, animi. Dolorum necessitatibus numquam rerum illo nesciunt maiores omnis totam, excepturi saepe nulla sapiente vero alias deleniti fugiat sit illum veniam, eos culpa quae cupiditate laboriosam at labore odit commodi. Doloribus, nam perspiciatis? Ipsa laborum incidunt odio esse dignissimos! Similique, eveniet! Corporis non quos ab. Perferendis laboriosam et, iste nobis, earum ex ipsam voluptatem a aliquid dignissimos iusto, autem cum sapiente? Nesciunt unde voluptates ratione debitis beatae ex asperiores quod et. Aut accusantium quisquam quibusdam voluptate assumenda non debitis perspiciatis, doloremque provident sunt earum ipsa quidem dolorum similique esse? Consectetur voluptas, voluptates doloribus, saepe veritatis voluptatem dolorum quo laudantium aut voluptatum, corporis impedit soluta magnam consequuntur suscipit dolor quis cum voluptatibus! Assumenda, nulla, deserunt necessitatibus ut excepturi laudantium pariatur molestias minima similique obcaecati et! Hic asperiores vero eum laboriosam! Fugiat, cupiditate esse qui similique consequuntur illum quas odit ex, dolores repellat ratione? Quo, mollitia deleniti commodi non laboriosam aut minima adipisci rerum ea quibusdam.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit dolores repellendus consequuntur laboriosam vitae. Culpa libero voluptate quaerat commodi veniam voluptatibus ab placeat recusandae voluptas praesentium accusantium provident aut, consequuntur soluta perferendis corporis facere illum. Doloribus perspiciatis labore ipsa laudantium debitis repellendus exercitationem illum perferendis. Quia, animi. Dolorum necessitatibus numquam rerum illo nesciunt maiores omnis totam, excepturi saepe nulla sapiente vero alias deleniti fugiat sit illum veniam, eos culpa quae cupiditate laboriosam at labore odit commodi. Doloribus, nam perspiciatis? Ipsa laborum incidunt odio esse dignissimos! Similique, eveniet! Corporis non quos ab. Perferendis laboriosam et, iste nobis, earum ex ipsam voluptatem a aliquid dignissimos iusto, autem cum sapiente? Nesciunt unde voluptates ratione debitis beatae ex asperiores quod et. Aut accusantium quisquam quibusdam voluptate assumenda non debitis perspiciatis, doloremque provident sunt earum ipsa quidem dolorum similique esse? Consectetur voluptas, voluptates doloribus, saepe veritatis voluptatem dolorum quo laudantium aut voluptatum, corporis impedit soluta magnam consequuntur suscipit dolor quis cum voluptatibus! Assumenda, nulla, deserunt necessitatibus ut excepturi laudantium pariatur molestias minima similique obcaecati et! Hic asperiores vero eum laboriosam! Fugiat, cupiditate esse qui similique consequuntur illum quas odit ex, dolores repellat ratione? Quo, mollitia deleniti commodi non laboriosam aut minima adipisci rerum ea quibusdam.</p>
 {% endblock content %} {% block scritps %}
+</div>
 <script>
+    $(document).ready(function() {
+        $('#preforms-table').DataTable();
+    });
 </script>
 {% endblock scritps %}
