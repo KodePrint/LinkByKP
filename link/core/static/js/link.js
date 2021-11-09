@@ -1,6 +1,6 @@
 var hamburguer = document.querySelector('.hamburger-menu')
 var menu = document.querySelector('.menu')
-var content = document.querySelector('.content')
+var content = document.querySelector('.main-content')
 var collapseBtn = document.querySelector('.collapse-button')
 var barState = localStorage.getItem('bar')
 

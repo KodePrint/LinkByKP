@@ -27,6 +27,7 @@ body {
     min-height: 100vh;
     flex-wrap: wrap;
     width: 100%;
+    background: var(--color_text);
 }
 
 
@@ -194,18 +195,19 @@ body {
 
 /* CONTENT SECTION */
 
-.content {
-    margin-top: 8rem;
-    padding-bottom: 8rem;
+.main-content {
+    margin-top: 5.5rem;
+    padding-bottom: 4rem;
 }
 
-.content .section {
-    padding: 0 1.5rem;
+.content {
+    background: white;
+    min-height: calc(100vh - 11rem);
+    padding: 1.5rem;
 }
 
 .content .table {
     overflow-x: scroll;
-    padding: 1rem;
 }
 
 
@@ -213,8 +215,8 @@ body {
 
 footer {
     display: flex;
-    max-height: 6rem;
-    height: 6rem;
+    max-height: 4rem;
+    height: 4rem;
     align-items: center;
     width: 100%;
     bottom: 0;

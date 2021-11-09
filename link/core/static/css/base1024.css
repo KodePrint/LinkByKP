@@ -130,6 +130,7 @@
     
     .collapse-menu .list-menu .btn-menu .collapse-button {
         transform: rotate(180deg);
+        transition: .3s ease;
     }
     /* .collapse-menu .list-menu .list .item a {
     justify-content: center;
@@ -143,33 +144,25 @@
         max-width: 9rem;
     }
     
-    .content.collapse-menu {
+    .main-content.collapse-menu {
         width: calc(100% - 9rem);
         margin-left: 9rem;
     }
     /* CONTENT SECTION */
     
-    .content {
+    .main-content {
+        margin-top: 5rem;
         width: calc(100% - 20rem);
         margin-left: 20rem;
         transition: 1s ease;
+        padding-bottom: 0;
         /* background: wheat; */
     }
     
-    .content .bg {
-        width: calc(100% - 20rem);
-        height: calc(100vh - 12.2rem);
-        position: absolute;
-        z-index: 0;
-        background: var(--color_text);
-    }
-    
-    .content .section {
-        position: absolute;
-        background: white;
-        min-width: calc(100% - 20rem);
-        min-height: calc(100vh - 12.5rem);
-        border-bottom-left-radius: 3rem;
+    .content {
+        padding: 4rem;
+        min-height: calc(100vh - 9.2rem);
+        border-bottom-left-radius: 5rem;
     }
     
     .content .table {
