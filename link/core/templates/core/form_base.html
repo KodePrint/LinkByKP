@@ -1,0 +1,20 @@
+{% extends "core/base.html" %}
+
+<!-- Incluimos el contenido -->
+{% block content %}
+<div class="content">
+    <div class="page_content_title">
+        <h2 class="page_title">{% block page_title %}Dashboard{% endblock page_title %}</h2>
+        <div class="page_subtitle">
+            <span>
+        {% block page_subtitle %}Pagina de Inicio..!{% endblock page_subtitle %}
+            </span>
+        </div>
+        <div class="page_content">
+
+            {% block table_list %} {% endblock table_list %}
+
+        </div>
+    </div>
+</div>
+{% endblock content %}

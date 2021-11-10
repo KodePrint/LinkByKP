@@ -29,6 +29,7 @@ body {
     width: 100%;
 }
 
+
 /* ------------------------------
         MENU SECTION 
 ------------------------------ */
@@ -98,9 +99,11 @@ body {
     margin-left: 100vw;
     transition: .5s ease;
 }
+
 .open-menu:hover .bar1 {
     width: 100%;
 }
+
 .open-menu .bar1 {
     width: 100%;
     transform: translateY(1.3rem) rotateZ(45deg);
@@ -198,68 +201,89 @@ body {
 /* ------------------------------
         CONTENT SECTION 
 ------------------------------ */
+
 .main {
     padding: 5.5rem 1.5rem 4.5rem 1.5rem;
+    width: 100%;
 }
+
 .page_content_title {
     margin: 1rem 0;
     color: var(--text_gray);
 }
+
 .page_title {
-    margin-bottom: .5rem;
+    /* margin-bottom: .5rem; */
+    margin: 2rem 0;
     font-size: 3.2rem;
     text-transform: uppercase;
 }
+
 .page_subtitle {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    /* height: 4rem; */
+    position: relative;
+    margin-bottom: 2rem;
+    border-bottom: solid rgba(0, 0, 0, .1);
+    /* 0px .1rem 0 #888; */
 }
+
 .page_subtitle .add {
-    position: fixed;
-    right: 2rem;
+    position: absolute;
+    right: 0;
     background: transparent;
     border: none;
     border-radius: 100%;
     background: var(--color_text_important);
     box-shadow: 0 .1rem .5rem .2rem rgba(0, 0, 0, .2);
-
-
 }
+
 .page_subtitle .add i {
-    font-size: 2rem;
-    width: 4rem;
-    height: 4rem;
+    font-size: 3rem;
+    width: 6rem;
+    height: 6rem;
+    text-align: center;
     border-radius: 100%;
-    line-height: 4rem;
+    line-height: 6rem;
     color: var(--text_gray);
     transition: .3s ease;
 }
+
 .page_subtitle .add i:hover {
     color: var(--color1);
     background: rgba(0, 0, 0, .5);
-
 }
 
 
 /* Page Content */
+
+.content {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
 .page_content {
     display: flex;
     max-width: 100vw;
     width: 100%;
     padding: 1rem 0;
     flex-wrap: wrap;
-    overflow: scroll;
-
+    /* overflow: scroll; */
 }
+
 
 /* Template List */
-.page_content .table {
-    max-width: 100vw;
+
+.table {
+    width: 100%;
 }
 
+
 /* Dashboard */
-.page_content .info_box{
+
+.page_content .info_box {
     width: 100%;
     padding: 1rem;
     border-radius: 1rem;

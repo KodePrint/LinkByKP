@@ -2,20 +2,20 @@
 
 <!-- Incluimos el contenido -->
 {% block content %}
-<div class="page_content_title">
-    <h2 class="page_title">{% block page_title %}Dashboard{% endblock page_title %}</h2>
-    <div class="page_subtitle">
-        <span>
+<div class="content">
+    <div class="page_content_title">
+        <h2 class="page_title">{% block page_title %}Dashboard{% endblock page_title %}</h2>
+        <div class="page_subtitle">
+            <span>
         {% block page_subtitle %}Pagina de Inicio..!{% endblock page_subtitle %}
             </span>
-        <button class="add"><i class="far fa-layer-plus"></i></button>
-    </div>
-    <div class="page_content">
-        
-        {% block table_list %}
-            
-        {% endblock table_list %}
-            
+            <a href="{% url 'preformCreate' %}" class="add"><i class="far fa-layer-plus"></i></a>
+        </div>
+        <div class="page_content">
+
+            {% block table_list %} {% endblock table_list %}
+
+        </div>
     </div>
 </div>
 {% endblock content %}

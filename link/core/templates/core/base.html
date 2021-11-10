@@ -16,14 +16,15 @@
 
     <!-- Styles CSS -->
     <link rel="stylesheet" href='{% static "css/base.css" %}'>
-    <link rel="stylesheet" href='{% static "css/base1024.css" %}' media="(min-width: 1024px)">
+    <link rel="stylesheet" href='{% static "css/base1280.css" %}' media="(min-width: 1280px)">
 
     <!-- Font Awesome -->
     <link href="https://kit-pro.fontawesome.com/releases/v5.15.3/css/pro.min.css" rel="stylesheet">
 
     <!-- DataTables -->
-    <!-- <link rel="stylesheet" href='{% static "css/dataTables/jquery.dataTables.min.css" %}'>
-    <link rel="stylesheet" href='{% static "css/dataTables/responsive.dataTables.min.css" %}'> -->
+    <link href="{% static 'plugins/DataTables/DataTables-1.11.3/css/jquery.dataTables.min.css' %}">
+    <link href="{% static 'plugins/DataTables/Responsive-2.2.9/css/responsive.dataTables.min.css' %}">
+
 </head>
 
 <body>
@@ -55,7 +56,7 @@
 
     <!-- Content -->
     <div class="main">
-            {% block content %} {% endblock content %}
+        {% block content %} {% endblock content %}
     </div>
     </div>
 
@@ -72,8 +73,9 @@
     <!-- JQuery -->
     <script src="{% static 'js/jquery-3.6.0.min.js' %}"></script>
     <!-- DataTable -->
-    <!-- <script src="{% static 'js/jquery.dataTables.min.js' %}"></script>
-    <script src="{% static 'js/dataTables.responsive.min.js' %}"></script> -->
+    <script src="{% static 'plugins/DataTables/DataTables-1.11.3/js/jquery.dataTables.min.js' %}"></script>
+    <script src="{% static 'plugins/DataTables/Responsive-2.2.9/js/dataTables.responsive.min.js' %}"></script>
+
 
 
     <!-- Scripts -->
@@ -82,13 +84,13 @@
     {% block scritps %} {% endblock scritps %}
     <!-- selected-link -->
     <script>
+        var path = '{{request.path}}';
         let home = document.querySelector('.home');
         let preform = document.querySelector('.preform');
         let invoice = document.querySelector('.invoice');
         let client = document.querySelector('.client');
-        let path = '{{link}}';
 
-        console.log(path)
+        validatePath()
 
         function selected_link(link) {
             home.classList.remove('selected');
@@ -98,13 +100,49 @@
 
             link.classList.add('selected');
         }
-        if (path == '') {
-            selected_link(home);
-        } else if (path == 'preform') {
-            selected_link(preform);
-        } else if (path == 'client') {
-            selected_link(client);
+
+        function validatePath() {
+            if (path.indexOf('home') === 1) {
+                selected_link(home);
+            } else if (path.indexOf('preform') === 1) {
+                selected_link(preform);
+            } else if (path.indexOf('client') === 1) {
+                selected_link(client);
+            } else {
+                selected_link(invoice);
+            }
         }
+        /*
+                let home = document.querySelector('.home');
+                let preform = document.querySelector('.preform');
+                let invoice = document.querySelector('.invoice');
+                let client = document.querySelector('.client');
+                let path = '{{request.path}}';
+
+                console.log('{{request.path}}')
+
+                function selected_link(link) {
+                    home.classList.remove('selected');
+                    preform.classList.remove('selected');
+                    invoice.classList.remove('selected');
+                    client.classList.remove('selected');
+
+                    link.classList.add('selected');
+                }
+
+                editPath()
+
+                function editPath() {
+                    let link = path.split('/');
+                    link.findIndex(preform)
+                };
+                if (path == '') {
+                    selected_link(home);
+                } else if (path == 'preform') {
+                    selected_link(preform);
+                } else if (path == 'client') {
+                    selected_link(client);
+                }*/
     </script>
 </body>
 

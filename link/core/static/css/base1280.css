@@ -145,7 +145,6 @@
         width: calc(100% - 9rem);
         margin-left: 9rem;
     }
-
     /* ------------------------------
         CONTENT SECTION 
     ------------------------------ */
@@ -158,24 +157,18 @@
         padding-bottom: 0;
         /* background: wheat; */
     }
-    
-    .content {
-        padding: 4rem;
-        min-height: calc(100vh - 9.2rem);
-        border-bottom-left-radius: 5rem;
-    }
-
+    /* .page_content {
+        width: 80%;
+        background: tomato;
+    } */
     /* Dashboard */
-    .page_content .info_box{
+    
+    .page_content .info_box {
         width: 30%;
         padding: 1rem;
         border-radius: 1rem;
         margin-bottom: 1rem;
         box-shadow: 0 .1rem .5rem .2rem rgba(0, 0, 0, .2);
-    }
-    
-    .content .table {
-        overflow-x: auto;
     }
     /* FOOTER SECTION */
     
