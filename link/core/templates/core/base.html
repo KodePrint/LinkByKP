@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{% static 'assets/img/kp_black.ico' %}">
     <title>{% block title %}{% endblock title %}</title>
 
     <!-- Fonts -->
@@ -21,8 +22,8 @@
     <link href="https://kit-pro.fontawesome.com/releases/v5.15.3/css/pro.min.css" rel="stylesheet">
 
     <!-- DataTables -->
-    <link rel="stylesheet" href='{% static "css/dataTables/jquery.dataTables.min.css" %}'>
-    <link rel="stylesheet" href='{% static "css/dataTables/responsive.dataTables.min.css" %}'>
+    <!-- <link rel="stylesheet" href='{% static "css/dataTables/jquery.dataTables.min.css" %}'>
+    <link rel="stylesheet" href='{% static "css/dataTables/responsive.dataTables.min.css" %}'> -->
 </head>
 
 <body>
@@ -53,10 +54,8 @@
     <hr>
 
     <!-- Content -->
-    <div class="main-content">
-        <div class="content">
+    <div class="main">
             {% block content %} {% endblock content %}
-        </div>
     </div>
     </div>
 
@@ -73,8 +72,8 @@
     <!-- JQuery -->
     <script src="{% static 'js/jquery-3.6.0.min.js' %}"></script>
     <!-- DataTable -->
-    <script src="{% static 'js/jquery.dataTables.min.js' %}"></script>
-    <script src="{% static 'js/dataTables.responsive.min.js' %}"></script>
+    <!-- <script src="{% static 'js/jquery.dataTables.min.js' %}"></script>
+    <script src="{% static 'js/dataTables.responsive.min.js' %}"></script> -->
 
 
     <!-- Scripts -->

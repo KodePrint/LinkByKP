@@ -27,11 +27,11 @@ body {
     min-height: 100vh;
     flex-wrap: wrap;
     width: 100%;
-    background: var(--color_text);
 }
 
-
-/* MENU SECTION */
+/* ------------------------------
+        MENU SECTION 
+------------------------------ */
 
 .navbar {
     display: flex;
@@ -98,8 +98,10 @@ body {
     margin-left: 100vw;
     transition: .5s ease;
 }
-
 .open-menu:hover .bar1 {
+    width: 100%;
+}
+.open-menu .bar1 {
     width: 100%;
     transform: translateY(1.3rem) rotateZ(45deg);
 }
@@ -193,49 +195,82 @@ body {
 }
 
 
-/* CONTENT SECTION */
-
-.main-content {
-    margin-top: 5.5rem;
-    padding-bottom: 4rem;
+/* ------------------------------
+        CONTENT SECTION 
+------------------------------ */
+.main {
+    padding: 5.5rem 1.5rem 4.5rem 1.5rem;
 }
-
-.content {
-    background: white;
-    padding: 1.5rem;
-    padding-bottom: 0;
-    min-height: calc(100vh - 9.4rem);
-}
-
-
-/* CONTENT LIST TEMPLATE */
-
-.page-title {
-    margin-bottom: 2rem;
+.page_content_title {
+    margin: 1rem 0;
     color: var(--text_gray);
 }
-
-.page-title h2 {
-    font-size: 3.2rem;
+.page_title {
     margin-bottom: .5rem;
+    font-size: 3.2rem;
     text-transform: uppercase;
 }
-
-.content-page {}
-
-.table-list {
-    max-width: 98vw;
+.page_subtitle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
+.page_subtitle .add {
+    position: fixed;
+    right: 2rem;
+    background: transparent;
+    border: none;
+    border-radius: 100%;
+    background: var(--color_text_important);
+    box-shadow: 0 .1rem .5rem .2rem rgba(0, 0, 0, .2);
 
 
-/* DataTable Styles */
-
-.table-icon {
+}
+.page_subtitle .add i {
     font-size: 2rem;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 100%;
+    line-height: 4rem;
+    color: var(--text_gray);
+    transition: .3s ease;
+}
+.page_subtitle .add i:hover {
+    color: var(--color1);
+    background: rgba(0, 0, 0, .5);
+
 }
 
 
-/* FOOTER SECTION */
+/* Page Content */
+.page_content {
+    display: flex;
+    max-width: 100vw;
+    width: 100%;
+    padding: 1rem 0;
+    flex-wrap: wrap;
+    overflow: scroll;
+
+}
+
+/* Template List */
+.page_content .table {
+    max-width: 100vw;
+}
+
+/* Dashboard */
+.page_content .info_box{
+    width: 100%;
+    padding: 1rem;
+    border-radius: 1rem;
+    margin: 1rem;
+    box-shadow: 0 .1rem .5rem .2rem rgba(0, 0, 0, .2);
+}
+
+
+/* ------------------------------
+        FOOTER SECTION 
+------------------------------ */
 
 footer {
     display: flex;
