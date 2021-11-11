@@ -1,19 +1,20 @@
-<div class="menu">
+<div class="list-menu">
+    <div class="fondo"></div>
     <ul class="list">
         <li class="item">
-            <a href=""><i class="fad fa-house"></i><span>Menu</span></a>
+            <a class="item-link home" href="{% url 'home' %}"><i class="fas fa-home-lg-alt"></i><span>Home</span></a>
         </li>
         <li class="item">
-            <a href=""><i class="fad fa-house"></i><span>Menu</span></a>
+            <a class="item-link preform" href="{% url 'preformList' %}"><i class="fas fa-file-invoice"></i><span>Preformas</span></a>
         </li>
         <li class="item">
-            <a href=""><i class="fad fa-house"></i><span>Menu</span></a>
+            <a class="item-link invoice" href=""><i class="fas fa-file-invoice-dollar"></i><span>Facturas</span></a>
         </li>
         <li class="item">
-            <a href=""><i class="fad fa-house"></i><span>Menu</span></a>
+            <a class="item-link client" href="{% url 'clientList' %}"><i class="fas fa-store-alt"></i><span>Clientes</span></a>
         </li>
     </ul>
     <div class="btn-menu">
-        <button class="collapse-button"><i class="fas fa-arrow-alt-to-left"></i></button>
+        <button class="collapse-button"><i class="far fa-arrow-alt-from-right"></i></button>
     </div>
 </div>

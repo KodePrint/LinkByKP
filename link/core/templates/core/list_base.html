@@ -1,0 +1,69 @@
+{% extends "core/base.html" %}
+
+<!-- Incluimos el contenido -->
+{% block content %}
+<div class="content">
+    <div class="page_content_title">
+        <h2 class="page_title">{% block page_title %}Dashboard{% endblock page_title %}</h2>
+        <div class="page_subtitle">
+            <span>
+        {% block page_subtitle %}Pagina de Inicio..!{% endblock page_subtitle %}
+            </span>
+            <a href="{% url 'preformCreate' %}" class="add"><i class="far fa-layer-plus"></i></a>
+        </div>
+        <div class="page_content">
+
+            {% block table_list %} {% endblock table_list %}
+
+        </div>
+    </div>
+</div>
+{% endblock content %}
+
+<!-- Scripts -->
+{% block scritps %}
+<script>
+    $(document).ready(function() {
+        //adminDataTable()
+    });
+
+    /*function adminDataTable() {
+        $('.table').DataTable({
+            responsive: true,
+            columnDefs: [
+                { responsivePriority: 0, targets: 0 },
+                { responsivePriority: 1, targets: -1 }
+            ],
+            "language": {
+                "emptyTable": "<i>No hay datos disponibles</i>",
+                "info": "Del _START_ al _END_ de _TOTAL_",
+                "infoEmpty": "Mostrando 0 registros de un total de 0",
+                "infoFiltered": "(<i><small>filtrados de un total de _MAX_ registros</small></i>)",
+                "infoPostFix": "(actualizados)",
+                "lengthMenu": "Mostrar _MENU_ registros",
+                "loadingRecords": "Cargando...",
+                "processing": "Procesando...",
+                "search": "<b><i class='table-icon fas fa-search'></i> Buscar</b>",
+                "searchPlaceholder": "",
+                "zeroRecords": "<i class='table-icon fad fa-sad-tear'></i> No se han econtrado conicidencias.",
+                "paginate": {
+                    "first": "Primera",
+                    "last": "Última",
+                    "next": "<i class='table-icon fad fa-chevron-right'></i>",
+                    "previous": "<i class='table-icon fad fa-chevron-left'></i>",
+                },
+                "aria": {
+                    "sortAscending": "Ordenación ascendente",
+                    "sortDescending": "Ordenación decendente",
+                },
+
+            },
+            "lengthMenu": [
+                [3, 5, 10, 20, 50, 100, -1],
+                [3, 5, 10, 20, 50, 100, "Todos"]
+            ],
+            "iDisplayLength": 8,
+        })
+    }*/
+</script>
+{% endblock scritps %}

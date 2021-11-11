@@ -1,0 +1,207 @@
+    /* Variables */
+    
+     :root {
+        --color1: #82c0cc;
+        --color2: #489fb5;
+        --color_text: #16697a;
+        --color_base2: #acc4c9;
+        --color_base: #ede7e3;
+        --color_text_important: #ffa62b;
+        --text_gray: #4c5c68;
+    }
+    
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    html {
+        font-size: 62.5%;
+        scroll-behavior: smooth;
+        font-family: 'Dosis', sans-serif;
+    }
+    
+    body {
+        font-size: 1.6rem;
+        min-height: 100vh;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+    /* MENU SECTION */
+    
+    .navbar {
+        padding: 1rem 3rem;
+    }
+    
+    .navbar .info {
+        display: inherit;
+    }
+    /* hamburger-menu */
+    
+    .hamburger-menu {
+        display: none;
+    }
+    /* Menu Escritorio */
+    
+    .list-menu {
+        top: 5rem;
+        padding: .1rem 0;
+        max-width: 20rem;
+        height: calc(100%);
+        margin: 0;
+        background: var(--color_text);
+        border-bottom-right-radius: -25%;
+    }
+    
+    .list-menu .list {
+        position: relative;
+        height: auto;
+        margin-bottom: 1rem;
+    }
+    
+    .list-menu .list .item a {
+        justify-content: flex-start;
+        padding: 1.5rem 0;
+        padding-left: 3rem;
+        border-bottom: .2rem solid rgba(0, 0, 0, .9);
+        border-bottom-left-radius: .5rem;
+        border-bottom-right-radius: .5rem;
+        color: var(--color_base);
+    }
+    
+    .list-menu .list .item a i {
+        display: flex;
+        font-size: 3rem;
+        width: 4rem;
+        justify-content: center;
+    }
+    
+    .list-menu .list .item a span {
+        padding-left: 1rem;
+        font-size: 1.6rem;
+        transition: 1s ease;
+    }
+    
+    .list-menu .list .item a:hover {
+        background: rgba(0, 0, 0, .5);
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        text-shadow: .5rem .5rem .5rem rgb(0, 0, 0);
+    }
+    
+    .list-menu .list .item .item-link.selected {
+        background: rgba(0, 0, 0, .5);
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        color: var(--color_text_important);
+    }
+    
+    .list-menu .btn-menu {
+        display: flex;
+        justify-content: center;
+    }
+    
+    .list-menu .btn-menu .collapse-button {
+        width: 5rem;
+        height: 5rem;
+        font-size: 3rem;
+        border-radius: 100%;
+        border: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: .3s ease;
+        background: var(--color_text_important);
+        color: var(--color_text);
+    }
+    
+    .list-menu .btn-menu .collapse-button:hover {
+        background: var(--color1);
+        color: var(--text_gray);
+        box-shadow: 0 0 1rem .1rem rgba(0, 0, 0, .9);
+    }
+    /* Fondo Movil */
+    
+    .list-menu .fondo {
+        display: none;
+    }
+    /* styles collapse-menu */
+    
+    .collapse-menu .list-menu .btn-menu .collapse-button {
+        transform: rotate(180deg);
+        transition: .3s ease;
+    }
+    
+    .collapse-menu .list-menu .list .item a span {
+        margin-left: -50rem;
+    }
+    
+    .collapse-menu .list-menu {
+        max-width: 9rem;
+    }
+    
+    .main.collapse-menu {
+        width: calc(100% - 9rem);
+        margin-left: 9rem;
+    }
+    /* ------------------------------
+        CONTENT SECTION 
+    ------------------------------ */
+    /* CONTENT SECTION */
+    
+    .main {
+        width: calc(100% - 20rem);
+        margin-left: 20rem;
+        transition: 1s ease;
+        padding-bottom: 0;
+        /* background: wheat; */
+    }
+    /* .page_content {
+        width: 80%;
+        background: tomato;
+    } */
+    /* Dashboard */
+    
+    .page_content .info_box {
+        width: 30%;
+        padding: 1rem;
+        border-radius: 1rem;
+        margin-bottom: 1rem;
+        box-shadow: 0 .1rem .5rem .2rem rgba(0, 0, 0, .2);
+    }
+
+    /* --------------------- */
+    /* FORM BASE TEMPLATE */
+    .form_add {
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    .client_data {
+        width: 20%;
+        max-height: auto;
+        order: 2;
+    }
+    .detail_data {
+        width: calc(80% - 2rem);
+        margin-right: 2rem;
+        order: 1;
+    }
+
+
+    /* ----------------- */
+    .input_group input[name='mount'], .input_group input[name='quantity']{
+        width: 35%;
+        max-width: 10rem;
+    }
+    /* FOOTER SECTION */
+    
+    footer {
+        background: var(--color_text);
+        z-index: 3;
+    }
+    
+    .footer .info span {
+        color: var(--color_base);
+    }

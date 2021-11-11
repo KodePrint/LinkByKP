@@ -34,7 +34,7 @@ class Preform(models.Model):
         verbose_name_plural = 'Preforms'
 
     def generateIdentifier(self):
-        identifier = 'PREFL'
+        identifier = 'PREFL-'
         identifier += str(self.client.company.name[:1]) + str(self.id)
         return identifier
 

@@ -1,72 +1,149 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{% static 'assets/img/kp_black.ico' %}">
     <title>{% block title %}{% endblock title %}</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;500;800&display=swap" rel="stylesheet">
+
     <!-- Styles CSS -->
     <link rel="stylesheet" href='{% static "css/base.css" %}'>
-    <link rel="stylesheet" href='{% static "css/base1024.css" %}' media="(min-width: 1024px)">
+    <link rel="stylesheet" href='{% static "css/base1280.css" %}' media="(min-width: 1280px)">
 
     <!-- Font Awesome -->
     <link href="https://kit-pro.fontawesome.com/releases/v5.15.3/css/pro.min.css" rel="stylesheet">
+
+    <!-- DataTables -->
+
+    {% block styles_load %}{% endblock styles_load %}
+        
+
 </head>
 
 <body>
-    <div class="container-content">
-        <!-- NavBar -->
+    <!-- Menu -->
+    <div class="menu">
         <div class="nav">
             <nav class="navbar">
-                <img class="logo" src='{% static "assets/img/LINK.ico" %}' alt="">
-                <div class="btn-hamburguer">
+                <div class="logo">
+                    <picture>
+                        <img src="{% static 'assets/img/LINK.ico' %}" alt="">
+                    </picture>
+                </div>
+                <div class="info">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo, earum?</p>
+                </div>
+                <div class="hamburger-menu">
                     <div class="bar bar1"></div>
                     <div class="bar bar2"></div>
                     <div class="bar bar3"></div>
                 </div>
             </nav>
         </div>
-
-        <!-- Menu -->
-        {% include "core/menu.html" %} {% block menu %}
-
-        <!-- Content -->
-        <div class="content">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima aliquam nisi possimus sed ratione, iste quos fugiat numquam commodi magnam ex, praesentium eaque sit, quibusdam iure adipisci temporibus rem repudiandae.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima aliquam nisi possimus sed ratione, iste quos fugiat numquam commodi magnam ex, praesentium eaque sit, quibusdam iure adipisci temporibus rem repudiandae.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima aliquam nisi possimus sed ratione, iste quos fugiat numquam commodi magnam ex, praesentium eaque sit, quibusdam iure adipisci temporibus rem repudiandae.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima aliquam nisi possimus sed ratione, iste quos fugiat numquam commodi magnam ex, praesentium eaque sit, quibusdam iure adipisci temporibus rem repudiandae.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima aliquam nisi possimus sed ratione, iste quos fugiat numquam commodi magnam ex, praesentium eaque sit, quibusdam iure adipisci temporibus rem repudiandae.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima aliquam nisi possimus sed ratione, iste quos fugiat numquam commodi magnam ex, praesentium eaque sit, quibusdam iure adipisci temporibus rem repudiandae.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima aliquam nisi possimus sed ratione, iste quos fugiat numquam commodi magnam ex, praesentium eaque sit, quibusdam iure adipisci temporibus rem repudiandae.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima aliquam nisi possimus sed ratione, iste quos fugiat numquam commodi magnam ex, praesentium eaque sit, quibusdam iure adipisci temporibus rem repudiandae.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima aliquam nisi possimus sed ratione, iste quos fugiat numquam commodi magnam ex, praesentium eaque sit, quibusdam iure adipisci temporibus rem repudiandae.</p>
+        <div class="menu-item">
+            {% include "core/menu.html" %}
         </div>
+    </div>
 
-    </div>
-    <!-- Menu -->
-    {% endblock menu %}
+    <hr>
+
     <!-- Content -->
-    {% block content %}{% endblock content %}
-    <!-- Footer -->
-    <div class="container-footer">
-        <footer>
-            <div class="container">
-                <div class="info">
-                    <h4 class="name">
-                        <img src='{% static "assets/img/kp_black.ico" %}' alt=""> KodePrint 2021
-                    </h4>
-                    <h4 class="bar"> - </h4>
-                    <h4 class="leyend"> Todos los Derechos Reservados &#169</h4>
-                </div>
-            </div>
-        </footer>
+    <div class="main">
+        {% block content %} {% endblock content %}
     </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="info">
+            <span>By <picture class="picture">
+                <source media="(max-width: 1024px)" srcset="{% static 'assets/img/kp_black.ico' %}">
+                <img src="{% static 'assets/img/kp_white.ico' %}" alt="KP">
+            </picture> KodePrint 2021 &copy;</span>
+        </div>
+    </footer>
+
+    <!-- JQuery -->
+    <script src="{% static 'js/jquery-3.6.0.min.js' %}"></script>
+    <!-- DataTable -->
+    
+    {% block scripts_load %}{% endblock scripts_load %}
+        
 
     <!-- Scripts -->
     <script src='{% static "js/link.js" %}'></script>
+
+    {% block scritps %} {% endblock scritps %}
+    <!-- selected-link -->
+    <script>
+        var path = '{{request.path}}';
+        let home = document.querySelector('.home');
+        let preform = document.querySelector('.preform');
+        let invoice = document.querySelector('.invoice');
+        let client = document.querySelector('.client');
+
+        validatePath()
+
+        function selected_link(link) {
+            home.classList.remove('selected');
+            preform.classList.remove('selected');
+            invoice.classList.remove('selected');
+            client.classList.remove('selected');
+
+            link.classList.add('selected');
+        }
+
+        function validatePath() {
+            if (path.indexOf('home') === 1) {
+                selected_link(home);
+            } else if (path.indexOf('preform') === 1) {
+                selected_link(preform);
+            } else if (path.indexOf('client') === 1) {
+                selected_link(client);
+            } else {
+                selected_link(invoice);
+            }
+        }
+        /*
+                let home = document.querySelector('.home');
+                let preform = document.querySelector('.preform');
+                let invoice = document.querySelector('.invoice');
+                let client = document.querySelector('.client');
+                let path = '{{request.path}}';
+
+                console.log('{{request.path}}')
+
+                function selected_link(link) {
+                    home.classList.remove('selected');
+                    preform.classList.remove('selected');
+                    invoice.classList.remove('selected');
+                    client.classList.remove('selected');
+
+                    link.classList.add('selected');
+                }
+
+                editPath()
+
+                function editPath() {
+                    let link = path.split('/');
+                    link.findIndex(preform)
+                };
+                if (path == '') {
+                    selected_link(home);
+                } else if (path == 'preform') {
+                    selected_link(preform);
+                } else if (path == 'client') {
+                    selected_link(client);
+                }*/
+    </script>
 </body>
 
 </html>

@@ -1,3 +1,64 @@
-<form method="post">{% csrf_token %} {{ form.as_p }}
-    <input type="submit" value="Save">
-</form>
+{% extends 'core/form_base.html' %}
+{% load static %}
+
+<!-- Cargamos los estilos que se necesiten -->
+{% block styles_load %}
+<link href="{% static 'plugins/Select2/css/select2.min.css' %}" rel="stylesheet" >
+{% endblock styles_load %}
+
+<!-- Modificamos el contenido -->
+<!-- Titulo -->
+{% block page_title %}<i class="fas fa-file-invoice"></i> Nueva Preforma{% endblock page_title %}
+<!-- Subtitulo -->
+{% block page_subtitle %}<i class="fas fa-plus"></i> Agregando una nueva preforma {% endblock page_subtitle %}
+
+
+{% block page_content %}
+    <form class="form_add" action="">
+        <div class="client_data">
+            <div class="title_client_data">
+                <h4>Datos del Cliente</h4>
+                <span class="date">{{now|date}}</span>
+            </div>
+            <div class="body_client_data">
+        </select>
+                <select class="preforms_select" name="client" id="id_client" style="width: 100%;" required></select>
+            </div>
+        </div>
+        <div class="detail_data">
+            <div class="title_detail_data">
+                <h4>Detalles de la Preforma</h4>
+            </div>
+            <div class="body_detail_data">
+                <div class="detail_input_data">
+                    <div class="input_group">
+                        <input name="description" type="text" placeholder="Descripción">
+                    </div>
+                    <div class="input_group">
+                        <input name="quantity" type="number" placeholder="Cantidad">
+                        <input name="mount" type="number" placeholder="Monto">
+                        <button class="add_detail_btn"><i class="fas fa-plus"></i></button>
+                    </div>
+                </div>
+                <table class="table_detail">
+                    <thead>
+                        <tr>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                    <tfoot>
+
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </form>
+{% endblock page_content %}
+
+{% block scripts_load %}
+<script src="{% static 'plugins/Select2/js/select2.min.js' %}"></script>
+<script src="{% static 'js/preforms.js' %}"></script>
+{% endblock scripts_load %}
+
+
+    
