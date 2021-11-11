@@ -170,31 +170,28 @@
         margin-bottom: 1rem;
         box-shadow: 0 .1rem .5rem .2rem rgba(0, 0, 0, .2);
     }
-
     /* --------------------- */
     /* FORM BASE TEMPLATE */
+    
     .form_add {
         justify-content: center;
         align-items: flex-start;
     }
-
+    
     .client_data {
         width: 20%;
         max-height: auto;
         order: 2;
     }
+    
     .detail_data {
         width: calc(80% - 2rem);
         margin-right: 2rem;
         order: 1;
     }
-
-
     /* ----------------- */
-    .input_group input[name='mount'], .input_group input[name='quantity']{
-        width: 35%;
-        max-width: 10rem;
-    }
+    
+    .input_group {}
     /* FOOTER SECTION */
     
     footer {

@@ -1,4 +1,4 @@
-{% extends "core/base.html" %}
+{% extends "core/base.html" %} {% load static %}
 
 <!-- Incluimos el contenido -->
 {% block content %}
@@ -12,11 +12,13 @@
         </div>
         <div class="page_content">
             {% block page_content %} {% endblock page_content %}
-            <div class="buttons_form">
-                <a class="btn_form" href="">Regresar</a>
-                <button class="btn_form">Registrar</button>
-            </div>
         </div>
     </div>
 </div>
 {% endblock content %}
+<!-- Carga de SCRITPS adiccionales -->
+{% block scripts_load %}
+<script src="{% static 'plugins/Select2/js/select2.min.js' %}"></script>
+<script src="{% static 'plugins/Select2/js/i18n/es.js' %}"></script>
+<script src="{% static 'js/preforms.js' %}"></script>
+{% endblock scripts_load %}
