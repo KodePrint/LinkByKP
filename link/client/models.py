@@ -1,4 +1,6 @@
 from django.db import models
+from django.forms import model_to_dict # Convierte una clase a Diccionario
+
 
 # Create your models here.
 
@@ -36,6 +38,14 @@ class Branch(models.Model):
 
         verbose_name = 'Branch'
         verbose_name_plural = 'Branchs'
+
+    def toJSON(self):
+        item = model_to_dict(self)
+        item['identifier'] = self.identifier
+        item['name'] = self.name
+        item['address'] = self.address
+        item['company'] = self.company.name
+        return item
 
     def __str__(self):
         """Unicode representation of Branch."""

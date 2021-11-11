@@ -6,7 +6,7 @@ from import_export.admin import ImportExportModelAdmin
 # Register your models here.
 
 class BranchAdmin(ImportExportModelAdmin):
-    
+    list_display = ('toJSON',)
     class Meta:
         model = Branch
 
