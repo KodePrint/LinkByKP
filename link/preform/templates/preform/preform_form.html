@@ -18,9 +18,9 @@
         <div class="client_data">
             <div class="title_client_data">
                 <h4>Datos del Cliente</h4>
+                <span class="date">{{now|date}}</span>
             </div>
             <div class="body_client_data">
-                <input type="date" readonly>
         </select>
                 <select class="preforms_select" name="client" id="id_client" style="width: 100%;" required></select>
             </div>
@@ -29,13 +29,26 @@
             <div class="title_detail_data">
                 <h4>Detalles de la Preforma</h4>
             </div>
-            <div class="table">
-                <table>
+            <div class="body_detail_data">
+                <div class="detail_input_data">
+                    <div class="input_group">
+                        <input name="description" type="text" placeholder="Descripción">
+                    </div>
+                    <div class="input_group">
+                        <input name="quantity" type="number" placeholder="Cantidad">
+                        <input name="mount" type="number" placeholder="Monto">
+                        <button class="add_detail_btn"><i class="fas fa-plus"></i></button>
+                    </div>
+                </div>
+                <table class="table_detail">
                     <thead>
-                        <tr>descripcion</tr>
-                        <tr>Cantidad/Medida</tr>
+                        <tr>
+                        </tr>
                     </thead>
                     <tbody></tbody>
+                    <tfoot>
+
+                    </tfoot>
                 </table>
             </div>
         </div>

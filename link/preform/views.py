@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.urls import reverse, reverse_lazy
 from django.http import JsonResponse
+from django.utils import timezone
 # Importamos las platillas a utilizar 
 from django.views.generic.edit import CreateView
 from django.views.generic.list import ListView
@@ -44,6 +45,7 @@ class PreformCreateView(CreateView):
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+        context['now'] = timezone.now()
         context['action'] = 'add'
         context["titulo"] = 'Preformas' 
         return context
